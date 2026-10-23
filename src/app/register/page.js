@@ -31,7 +31,7 @@ export default function Register() {
       }
       const data = await res.json();
       setSuccess(data.message);
-      setTimeout(() => router.push("/login"), 1000);
+      setTimeout(() => router.push("/"), 1000);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -261,13 +261,13 @@ export default function Register() {
 
             <div className="mt-6 text-center">
               <p className="text-xs" style={{ color: "rgba(100, 116, 139, 0.8)" }}>
-                Already have an account?{" "}
+                Return to{" "}
                 <Link
-                  href="/login"
+                  href="/"
                   className="font-bold transition-colors"
                   style={{ color: "rgba(200, 16, 46, 0.8)" }}
                 >
-                  Sign In
+                  Dashboard
                 </Link>
               </p>
             </div>

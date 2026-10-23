@@ -155,13 +155,13 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 h-16 border-b border-border bg-white flex items-center justify-between px-8">
       {/* Left side: Logo Section */}
-      <div className="flex items-center space-x-2.5 w-[240px] shrink-0 justify-start">
+      <Link href="/" className="flex items-center space-x-2.5 w-[240px] shrink-0 justify-start cursor-pointer hover:opacity-90 transition-opacity">
         <img src="/postoffice.png" alt="India Post" className="h-8" />
         <div className="leading-none">
           <p className="text-sm font-extrabold text-primary tracking-tight">{t("postalService")}</p>
           <p className="text-xs font-bold text-secondary uppercase tracking-wider mt-0.5">{t("dssPortal")}</p>
         </div>
-      </div>
+      </Link>
 
       {/* Center side: Unified Navigation and Search Trigger Pill */}
       <div className="flex-1 max-w-4xl mx-4 flex justify-center relative">
@@ -411,16 +411,6 @@ const Header = () => {
               <Link href="/register" className="text-foreground w-full cursor-pointer">
                 {t("createUser")}
               </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem 
-              className="text-destructive font-bold cursor-pointer"
-              onClick={() => {
-                localStorage.removeItem("token");
-                toast.success("Successfully logged out");
-                router.push("/login");
-              }}
-            >
-              {t("logout")}
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
